@@ -58,13 +58,17 @@ class App extends React.Component {
     };
   }
 
+  toggleClassName = itemId => {
+    console.log('clicked baby');
+  }
+
 
 
   render() {
     return (
       <div className="appDivMainContainer">
         <h2 className="welcome">Welcome Chineek, to your Todo App!</h2>
-        <TodoList todoItems ={this.state.todoItems}/>
+        <TodoList todoItems={this.state.todoItems} toggleClassName={this.toggleClassName}/>
       </div>
     );
   }

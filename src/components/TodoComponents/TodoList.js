@@ -8,13 +8,14 @@ import Todo from "./Todo.js";
 
 
 const TodoList = (props) => {
+
 	
 	return (
 		<div className="toDoListDiv">
 			{props.todoItems.map(item => (
-				<Todo key={item.id} item={item}/>
+				<Todo key={item.id} item={item} toggleClassName={props.toggleClassName}/>
 			))}
-			
+			<Remove />
 		</div>
 
 	);
