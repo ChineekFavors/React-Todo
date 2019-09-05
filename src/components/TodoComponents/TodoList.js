@@ -7,12 +7,14 @@ import Remove from "./Remove.js";
 import Todo from "./Todo.js";
 
 
-const TodoList = () => {
+const TodoList = (props) => {
+	
 	return (
 		<div className="toDoListDiv">
-			<TodoForm />
-			<Todo />
-			<Remove />
+			{props.todoItems.map(item => (
+				<Todo key={item.id} item={item}/>
+			))}
+			
 		</div>
 
 	);
