@@ -4,12 +4,14 @@ import React from "react";
 
 import TodoForm from "./TodoForm.js";
 import Remove from "./Remove.js";
+import Todo from "./Todo.js";
 
 
 const TodoList = () => {
 	return (
 		<div className="toDoListDiv">
 			<TodoForm />
+			<Todo />
 			<Remove />
 		</div>
 
