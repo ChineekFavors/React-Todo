@@ -4,6 +4,7 @@ import Todo from "./components/TodoComponents/Todo.css";
 
 
 import TodoList from "./components/TodoComponents/TodoList.js";
+import TodoForm from "./components/TodoComponents/TodoForm.js";
 
 const todoItems = [
   {
@@ -54,21 +55,46 @@ class App extends React.Component {
     super();
     this.state = {
       todoItems
-
     };
   }
 
+  addItem = (e, itemName) => {
+    e.preventDefault();
+    const newItem = {
+      item: itemName,
+      id: Date.now(),
+      completed: false
+    };
+    this.setState({
+      todoItems: [...this.state.todoItems, newItem]
+    });
+  };
+
   toggleClassName = itemId => {
-    console.log('clicked baby');
-  }
+    this.setState({
+      todoItems: this.state.todoItems.map(item => {
+        if (item.id === itemId) {
+          return { ...item, completed: !item.completed}
+        }
+        return item;
+      })
+    });
+  };
+
 
 
 
   render() {
     return (
       <div className="appDivMainContainer">
-        <h2 className="welcome">Welcome Chineek, to your Todo App!</h2>
-        <TodoList todoItems={this.state.todoItems} toggleClassName={this.toggleClassName}/>
+        <h1 className="welcome">Welcome Chineek, to your Todo App!</h1>
+        <TodoForm addItem={this.addItem}/>
+        <h2>Todo List....</h2>
+          <TodoList todoItems={this.state.todoItems} 
+            toggleClassName={this.toggleClassName}
+            handleChange={this.handleChange}
+            addItem={this.addItem}
+          />
       </div>
     );
   }

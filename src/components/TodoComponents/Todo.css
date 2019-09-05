@@ -57,6 +57,8 @@ table {
 }
 .welcome{
 	font-size: 3rem;
+	margin-bottom: 10px;
+	text-align: center;
 }
 .todoDiv{
 	display: flex;
@@ -64,6 +66,15 @@ table {
 	width: 30%;
 	display: inline-block;		
 }
+
+.todoDiv.completed{
+	display: flex;
+	flex-direction: row;
+	width: 30%;
+	display: inline-block;
+	text-decoration: line-through;
+}
+
 
 .h3Todo{
 	margin-left: 10%;
@@ -75,6 +86,10 @@ table {
 	font-size: 1.7rem;
 
 }
+.h3Todo:hover{
+	background-color: rgb(249, 36, 0);
+
+}
 .clearBTN{
 	margin-left: 5%;
 	margin-top: 5px;
@@ -83,6 +98,29 @@ table {
 	background-color: blue;
 	color: rgb(249, 36, 114);
 	font-size: 1.3rem;
+	border-radius: 10px;
+
+}
+
+.addDiv{
+	
+	margin-bottom: 10px;
+}
+.todoFormInput{
+	font-size: 1.3rem;
+	margin-left: 5%;
+	margin-right: 20px;
+
+}
+.form{
+	margin-bottom: 10px;
+}
+
+.addBTN{
+	background-color: blue;
+	color: rgb(249, 36, 114);
+	font-size: 1.3rem;
+	border-radius: 10px;
 
 }
 
