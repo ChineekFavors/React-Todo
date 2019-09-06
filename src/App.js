@@ -18,33 +18,13 @@ const todoItems = [
     id: 112,
     completed: false
   },
-  {
-    item: 'go smoke a cig',
-    id: 113,
-    completed: false
-  },
-
+ 
   {
     item: 'find a bike',
     id: 115,
     completed: false
   },
-  {
-    item: 'go out side',
-    id: 116,
-    completed: false
-  },
-  {
-    item: 'test if app work',
-    id: 118,
-    completed: false
-  },
-  {
-    item: 'test if app work2',
-    id: 119,
-    completed: false
-  },
-
+  
 ];
 
 class App extends React.Component {
@@ -70,6 +50,14 @@ class App extends React.Component {
     });
   };
 
+  clearCompleted = (e) => {
+    e.preventDefault();
+    this.setState({
+      todoItems: this.state.todoItems.filter(item => !item.completed)   
+    });
+
+  }
+
   toggleClassName = itemId => {
     this.setState({
       todoItems: this.state.todoItems.map(item => {
@@ -94,6 +82,7 @@ class App extends React.Component {
             toggleClassName={this.toggleClassName}
             handleChange={this.handleChange}
             addItem={this.addItem}
+            clearCompleted={this.clearCompleted}
           />
       </div>
     );

@@ -18,7 +18,7 @@ const TodoList = (props) => {
 				toggleClassName={props.toggleClassName}
 			/>
 		))}
-			<Remove />
+			<Remove clearCompleted={props.clearCompleted}/>
 		</div>
 
 	);

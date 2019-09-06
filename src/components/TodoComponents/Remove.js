@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Remove = () => {
+const Remove = (props) => {
 	return(
-		<button className="clearBTN">remove completed</button>
+		<button className="clearBTN" onClick={props.clearCompleted}>remove completed</button>
 	);
 };
 
