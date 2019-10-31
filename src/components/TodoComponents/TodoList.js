@@ -14,10 +14,10 @@ const TodoList = (props) => {
 		<div className="toDoListDiv">
 			{props.todoItems.map(item => (
 				<Todo key={item.id} 
-				item={item} 
-				toggleClassName={props.toggleClassName}
-			/>
-		))}
+					item={item} 
+					toggleClassName={props.toggleClassName}
+				/>
+			))}
 			<Remove clearCompleted={props.clearCompleted}/>
 		</div>
 

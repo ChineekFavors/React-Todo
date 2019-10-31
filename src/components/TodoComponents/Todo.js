@@ -8,8 +8,7 @@ const Todo = props => {
 			onClick={() => props.toggleClassName(props.item.id) }
 		>
 			<h3 className='h3Todo' >{props.item.item}</h3>
-
 		</div>
 	);
 }
-export default Todo;
+export default Todo; 

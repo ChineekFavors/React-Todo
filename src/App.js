@@ -27,6 +27,7 @@ const todoItems = [
   
 ];
 
+
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -36,6 +37,7 @@ class App extends React.Component {
     this.state = {
       todoItems
     };
+    
   }
 
   addItem = (e, itemName) => {
